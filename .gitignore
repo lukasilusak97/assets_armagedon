@@ -1,0 +1,6 @@
+# Ktx textures
+*.ktx2
+.ella_ktx/ 
+.ella_png/ 
+.ella_gltf/
+.blend/

@@ -1,5 +1,6 @@
 # Ktx textures
 *.ktx2
+*.spp
 .ella_ktx/ 
 .ella_png/ 
 .ella_gltf/

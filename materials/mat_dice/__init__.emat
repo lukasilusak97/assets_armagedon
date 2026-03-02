@@ -1,0 +1,6 @@
+{
+       "base_color_texture" : "./base.png",
+       "alpha_mode" : {
+           "int" : 2
+       }
+   }

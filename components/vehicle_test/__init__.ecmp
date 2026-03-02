@@ -1,0 +1,716 @@
+{
+       "roles" : {
+           "user_input" : {
+               "vars" : {
+                   "enabled" : true,
+                   "input_map_path" : "$(root)/assets/input_maps/vehicle_map.eim"
+               }
+           },
+           "ext_values" : {
+               "vars" : {
+                   "values" : {
+                       "map_var" : {
+                           "../floor:pose:pose" : {
+                               "transform" : [
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   1,
+                                   100,
+                                   1,
+                                   100
+                               ]
+                           }
+                       }
+                   }
+               }
+           },
+           "favorites" : {
+
+           },
+           "vehicle_control_base" : {
+               "vars" : {
+                   "vehicle_link" : "vehicle_setup/vehicle:vehicle_base"
+               }
+           }
+       },
+       "children" : {
+           "vehicle_setup" : {
+               "roles" : {
+                   "pose" : {
+
+                   }
+               },
+               "children" : {
+                   "vehicle" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "vehicle_base" : {
+                               "vars" : {
+                                   "suspension_jounce_calculation" : {
+                                       "int" : 1
+                                   },
+                                   "road_geometry_query_type" : {
+                                       "int" : 2
+                                   },
+                                   "direct_drive_gear" : {
+                                       "int" : 0
+                                   },
+                                   "actual_speed" : 3.0239324569702148
+                               }
+                           }
+                       }
+                   },
+                   "vehicle_body" : {
+                       "roles" : {
+                           "pose" : {
+                               "vars" : {
+                                   "pose" : {
+                                       "scale" : [
+                                           1.75,
+                                           1.3,
+                                           4.9000000000000004
+                                       ]
+                                   }
+                               }
+                           },
+                           "vehicle_body" : {
+                               "vars" : {
+                                   "mass" : 1500
+                               }
+                           }
+                       }
+                   },
+                   "engine" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "vehicle_engine_drivetran" : {
+
+                           }
+                       }
+                   },
+                   "multi_wheel_drive" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "vehicle_multi_wheel_diff_state" : {
+
+                           }
+                       }
+                   },
+                   "ackerman" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "vehicle_ackerman_chassis" : {
+                               "vars" : {
+                                   "wheel_2" : {
+                                       "int" : 1
+                                   },
+                                   "wheel_base" : 3,
+                                   "track_width" : 2,
+                                   "strength" : 0.90000000000000002
+                               }
+                           }
+                       }
+                   },
+                   "cmass_offset" : {
+                       "roles" : {
+                           "pose" : {
+                               "vars" : {
+                                   "pose" : {
+                                       "translation" : [
+                                           0,
+                                           0.61767470836639404,
+                                           0
+                                       ]
+                                   }
+                               }
+                           },
+                           "vehicle_cmass_offset" : {
+
+                           }
+                       }
+                   },
+                   "vehicle_suspension_0" : {
+                       "roles" : {
+                           "pose" : {
+                               "vars" : {
+                                   "pose" : {
+                                       "translation" : [
+                                           -1.1785691976547241,
+                                           0.47459423542022705,
+                                           1.3984611034393311
+                                       ]
+                                   }
+                               }
+                           },
+                           "vehicle_wheel_suspension" : {
+                               "vars" : {
+                                   "susp_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "tire_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "damping" : 1800
+                               }
+                           }
+                       },
+                       "children" : {
+                           "vehicle_attachment" : {
+                               "roles" : {
+                                   "pose" : {
+
+                                   },
+                                   "vehicle_wheel_attachment" : {
+                                       "vars" : {
+                                           "whell_link" : "../../../wheel_0:vehicle_wheel",
+                                           "brake_multiplier" : 1,
+                                           "steer_multiplier" : 1,
+                                           "direct_drive_throtle_response" : 0.25,
+                                           "multi_wheel_diff_torque_ratio" : 0.25,
+                                           "multi_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "four_wheel_diff_torque_ratio" : 0.25,
+                                           "four_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "tank_diff_torque_ratio" : 0.25,
+                                           "tank_diff_ave_wheel_speed_ratio" : 0.25
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   },
+                   "vehicle_suspension_1" : {
+                       "roles" : {
+                           "pose" : {
+                               "vars" : {
+                                   "pose" : {
+                                       "translation" : [
+                                           1.0040426254272461,
+                                           0.47459399700164795,
+                                           1.3984600305557251
+                                       ]
+                                   }
+                               }
+                           },
+                           "vehicle_wheel_suspension" : {
+                               "vars" : {
+                                   "wheel_id" : {
+                                       "int" : 1
+                                   },
+                                   "wheel_axle_id" : {
+                                       "int" : 1
+                                   },
+                                   "susp_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "tire_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "damping" : 1800
+                               }
+                           }
+                       },
+                       "children" : {
+                           "vehicle_attachment" : {
+                               "roles" : {
+                                   "pose" : {
+
+                                   },
+                                   "vehicle_wheel_attachment" : {
+                                       "vars" : {
+                                           "whell_link" : "../../../wheel_1:vehicle_wheel",
+                                           "brake_multiplier" : 1,
+                                           "steer_multiplier" : 1,
+                                           "direct_drive_throtle_response" : 0.25,
+                                           "multi_wheel_diff_torque_ratio" : 0.25,
+                                           "multi_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "four_wheel_diff_torque_ratio" : 0.25,
+                                           "four_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "tank_diff_torque_ratio" : 0.25,
+                                           "tank_diff_ave_wheel_speed_ratio" : 0.25
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   },
+                   "vehicle_suspension_2" : {
+                       "roles" : {
+                           "pose" : {
+                               "vars" : {
+                                   "pose" : {
+                                       "translation" : [
+                                           -1.1412323713302612,
+                                           0.47386205196380615,
+                                           -1.8104218244552612
+                                       ]
+                                   }
+                               }
+                           },
+                           "vehicle_wheel_suspension" : {
+                               "vars" : {
+                                   "wheel_id" : {
+                                       "int" : 2
+                                   },
+                                   "axle_id" : {
+                                       "int" : 1
+                                   },
+                                   "susp_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "tire_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "damping" : 1800
+                               }
+                           }
+                       },
+                       "children" : {
+                           "vehicle_attachment" : {
+                               "roles" : {
+                                   "pose" : {
+
+                                   },
+                                   "vehicle_wheel_attachment" : {
+                                       "vars" : {
+                                           "whell_link" : "../../../wheel_2:vehicle_wheel",
+                                           "direct_drive_throtle_response" : 0.25,
+                                           "multi_wheel_diff_torque_ratio" : 0.25,
+                                           "multi_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "four_wheel_diff_torque_ratio" : 0.25,
+                                           "four_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "tank_diff_torque_ratio" : 0.25,
+                                           "tank_diff_ave_wheel_speed_ratio" : 0.25
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   },
+                   "vehicle_suspension_3" : {
+                       "roles" : {
+                           "pose" : {
+                               "vars" : {
+                                   "pose" : {
+                                       "translation" : [
+                                           1.1051750183105469,
+                                           0.47385185956954956,
+                                           -1.8104202747344971
+                                       ],
+                                       "rotation" : [
+                                           -6.9388939039072284e-18,
+                                           -5.7245874707234634e-17,
+                                           6.9388939039072284e-18,
+                                           0.99999988079071045
+                                       ]
+                                   }
+                               }
+                           },
+                           "vehicle_wheel_suspension" : {
+                               "vars" : {
+                                   "wheel_id" : {
+                                       "int" : 3
+                                   },
+                                   "axle_id" : {
+                                       "int" : 1
+                                   },
+                                   "wheel_axle_id" : {
+                                       "int" : 1
+                                   },
+                                   "susp_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "tire_force_app_point" : {
+                                       "vector_double_vec3" : [
+                                           {
+                                               "first" : 0,
+                                               "x" : 0,
+                                               "y" : 0,
+                                               "z" : -0.11
+                                           }
+                                       ]
+                                   },
+                                   "damping" : 1800
+                               }
+                           }
+                       },
+                       "children" : {
+                           "vehicle_attachment" : {
+                               "roles" : {
+                                   "pose" : {
+
+                                   },
+                                   "vehicle_wheel_attachment" : {
+                                       "vars" : {
+                                           "whell_link" : "../../../wheel_3:vehicle_wheel",
+                                           "direct_drive_throtle_response" : 0.25,
+                                           "multi_wheel_diff_torque_ratio" : 0.25,
+                                           "multi_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "four_wheel_diff_torque_ratio" : 0.25,
+                                           "four_wheel_diff_ave_wheel_speed_ratio" : 0.25,
+                                           "tank_diff_torque_ratio" : 0.25,
+                                           "tank_diff_ave_wheel_speed_ratio" : 0.25
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   },
+                   "colider" : {
+                       "roles" : {
+                           "pose" : {
+                               "vars" : {
+                                   "pose" : {
+                                       "translation" : [
+                                           0,
+                                           1.7358831819451428,
+                                           0
+                                       ],
+                                       "scale" : [
+                                           1,
+                                           1,
+                                           4.7490148544311523
+                                       ]
+                                   }
+                               }
+                           },
+                           "collider" : {
+
+                           },
+                           "box_collider" : {
+
+                           }
+                       }
+                   }
+               }
+           },
+           "buggy_body" : {
+               "roles" : {
+                   "pose" : {
+                       "vars" : {
+                           "pose" : {
+                               "rotation" : [
+                                   0,
+                                   1,
+                                   0,
+                                   6.1232342629258393e-17
+                               ]
+                           }
+                       }
+                   },
+                   "model" : {
+                       "vars" : {
+                           "path" : "$(workspace)/assets/assets_armagedon/models/ella_avatar_buggy/Ella_Avatar_Buggy.blend",
+                           "filter" : ";-wheel"
+                       }
+                   }
+               }
+           },
+           "wheel_0" : {
+               "roles" : {
+                   "pose" : {
+                       "vars" : {
+                           "pose" : {
+                               "translation" : [
+                                   -1.1785692187346153,
+                                   0.25898131710718997,
+                                   1.3984610857063338
+                               ],
+                               "rotation" : [
+                                   0.50929534435272217,
+                                   2.4069288229178198e-17,
+                                   0,
+                                   0.86059182882308971
+                               ]
+                           }
+                       }
+                   },
+                   "vehicle_wheel" : {
+                       "vars" : {
+                           "radius" : 0.5,
+                           "half_width" : 0.20000000000000001
+                       }
+                   }
+               },
+               "children" : {
+                   "wheel" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "model" : {
+                               "vars" : {
+                                   "path" : "$(workspace)/assets/assets_armagedon/models/ella_avatar_buggy/Ella_Avatar_Buggy.blend",
+                                   "model_pose" : {
+                                       "translation" : [
+                                           0.98360633850097656,
+                                           -0.47435405850410461,
+                                           1.2918157577514648
+                                       ],
+                                       "rotation" : [
+                                           0,
+                                           0,
+                                           0,
+                                           -1
+                                       ]
+                                   },
+                                   "filter" : "-root;+wheel"
+                               }
+                           }
+                       }
+                   }
+               }
+           },
+           "wheel_1" : {
+               "roles" : {
+                   "pose" : {
+                       "vars" : {
+                           "pose" : {
+                               "translation" : [
+                                   1.0040426043469723,
+                                   0.26684439175907682,
+                                   1.3984600457027447
+                               ],
+                               "rotation" : [
+                                   0.69175213575363159,
+                                   -5.2909066017292616e-17,
+                                   0,
+                                   -0.72213500738143932
+                               ]
+                           }
+                       }
+                   },
+                   "vehicle_wheel" : {
+                       "vars" : {
+                           "radius" : 0.5,
+                           "half_width" : 0.20000000000000001
+                       }
+                   }
+               },
+               "children" : {
+                   "wheel#1" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "model" : {
+                               "vars" : {
+                                   "path" : "$(workspace)/assets/assets_armagedon/models/ella_avatar_buggy/Ella_Avatar_Buggy.blend",
+                                   "model_pose" : {
+                                       "translation" : [
+                                           0.98360633850097656,
+                                           -0.47435405850410461,
+                                           1.2918157577514648
+                                       ],
+                                       "rotation" : [
+                                           0,
+                                           0,
+                                           0,
+                                           -1
+                                       ]
+                                   },
+                                   "filter" : "-root;+wheel"
+                               }
+                           }
+                       }
+                   }
+               }
+           },
+           "wheel_2" : {
+               "roles" : {
+                   "pose" : {
+                       "vars" : {
+                           "pose" : {
+                               "translation" : [
+                                   -1.14123234406925,
+                                   0.22862097630020473,
+                                   -1.8104218416282993
+                               ],
+                               "rotation" : [
+                                   1,
+                                   0,
+                                   -1.1102230246251565e-16,
+                                   -0.00029639803688041822
+                               ]
+                           }
+                       }
+                   },
+                   "vehicle_wheel" : {
+                       "vars" : {
+                           "radius" : 0.5,
+                           "half_width" : 0.20000000000000001
+                       }
+                   }
+               },
+               "children" : {
+                   "wheel#2" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "model" : {
+                               "vars" : {
+                                   "path" : "$(workspace)/assets/assets_armagedon/models/ella_avatar_buggy/Ella_Avatar_Buggy.blend",
+                                   "model_pose" : {
+                                       "translation" : [
+                                           0.98360633850097656,
+                                           -0.47435405850410461,
+                                           1.2918157577514648
+                                       ],
+                                       "rotation" : [
+                                           0,
+                                           0,
+                                           0,
+                                           -1
+                                       ]
+                                   },
+                                   "filter" : "-root;+wheel"
+                               }
+                           }
+                       }
+                   }
+               }
+           },
+           "wheel_3" : {
+               "roles" : {
+                   "pose" : {
+                       "vars" : {
+                           "pose" : {
+                               "translation" : [
+                                   1.1051750455711238,
+                                   0.23671707531407926,
+                                   -1.8104202580664648
+                               ],
+                               "rotation" : [
+                                   0.97564941644668601,
+                                   8.6736173798840355e-18,
+                                   0,
+                                   -0.21933591365814212
+                               ]
+                           }
+                       }
+                   },
+                   "vehicle_wheel" : {
+                       "vars" : {
+                           "radius" : 0.5,
+                           "half_width" : 0.20000000000000001
+                       }
+                   }
+               },
+               "children" : {
+                   "wheel#3" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "model" : {
+                               "vars" : {
+                                   "path" : "$(workspace)/assets/assets_armagedon/models/ella_avatar_buggy/Ella_Avatar_Buggy.blend",
+                                   "model_pose" : {
+                                       "translation" : [
+                                           0.98360633850097656,
+                                           -0.47435405850410461,
+                                           1.2918157577514648
+                                       ],
+                                       "rotation" : [
+                                           0,
+                                           0,
+                                           0,
+                                           -1
+                                       ]
+                                   },
+                                   "filter" : "-root;+wheel"
+                               }
+                           }
+                       }
+                   }
+               }
+           },
+           "camera" : {
+               "roles" : {
+                   "pose" : {
+                       "vars" : {
+                           "pose" : {
+                               "translation" : [
+                                   1.0875867825776986e-07,
+                                   4.2815998703464535,
+                                   -4.9487522597768061
+                               ],
+                               "rotation" : [
+                                   0.086333751631031311,
+                                   -0.70181657481363457,
+                                   -0.086333749865605089,
+                                   0.70181656180787044
+                               ]
+                           }
+                       }
+                   },
+                   "player_camera" : {
+                       "vars" : {
+                           "active" : true
+                       }
+                   }
+               }
+           }
+       }
+   }

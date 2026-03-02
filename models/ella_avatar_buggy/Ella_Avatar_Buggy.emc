@@ -1,0 +1,12 @@
+{
+       "enabled" : false,
+       "add_lightmap_uv" : false,
+       "add_tangents" : true,
+       "add_bvh" : true,
+       "rewrite_original_coords" : false,
+       "auto_lods_enable" : false,
+       "amount_of_lods" : {
+           "int" : 3
+       },
+       "lod_difference" : 45
+   }

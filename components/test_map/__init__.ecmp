@@ -1,0 +1,66 @@
+{
+       "roles" : {
+           "thumbnail" : {
+               "vars" : {
+                   "camera_view_matrix" : {
+                       "mat4" : [
+                           0.76604444268444705,
+                           -0.27571419087158244,
+                           0.58065273338227197,
+                           0,
+                           -6.6613381477509392e-15,
+                           0.90333529172666238,
+                           0.42893513579690112,
+                           0,
+                           -0.64278761020439346,
+                           -0.32858337704931861,
+                           0.69199498010794147,
+                           0,
+                           -9.0459402285908652,
+                           11.327244691707014,
+                           -76.902570871350633,
+                           1
+                       ]
+                   }
+               }
+           },
+           "favorites" : {
+
+           }
+       },
+       "children" : {
+           "test_map" : {
+               "roles" : {
+                   "pose" : {
+
+                   },
+                   "model" : {
+                       "vars" : {
+                           "path" : "$(workspace)/assets/assets_armagedon/models/test_map/test_map.blend"
+                       }
+                   },
+                   "rigid_body" : {
+
+                   },
+                   "static_rigid_body" : {
+
+                   }
+               },
+               "children" : {
+                   "collision_shape" : {
+                       "roles" : {
+                           "pose" : {
+
+                           },
+                           "collider" : {
+
+                           },
+                           "triangle_mesh_collider" : {
+
+                           }
+                       }
+                   }
+               }
+           }
+       }
+   }

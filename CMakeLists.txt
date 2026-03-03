@@ -1,0 +1,9 @@
+include(${CMAKE_SOURCE_DIR}/${ELLA_COMMON_CMAKE_PATH})
+ExtractSourceFiles()
+include(${CMAKE_SOURCE_DIR}/${ELLA_COMMON_PLUGIN_CMAKE_PATH})
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+{
+    "base_color_texture": "./BaseColor.png",
+    "normal_texture": "./Normal.jpg",
+    "metallic_roughness_texture": "./OcclusionRoughnessMetalness.png",
+    "metallic_factor": {
+        "float": 1.0
+    },
+    "base_color_factor": {
+        "vec4": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    "roughness_factor": {
+        "float": 1.0
+    }
+}

@@ -1,24 +1,98 @@
 {
        "roles" : {
+           "ambient_fx" : {
+               "vars" : {
+                   "irradiance_intensity" : 0.17199999999999999,
+                   "radiance_intensity" : 0.021000000000000001
+               }
+           },
+           "sky_fx" : {
+               "vars" : {
+                   "sun_dir" : {
+                       "vec4" : [
+                           0,
+                           -1,
+                           0,
+                           0
+                       ]
+                   },
+                   "sky_intensity" : 0.41699999999999998,
+                   "sunIntensity" : 10.228
+               }
+           },
+           "sun_fx" : {
+               "vars" : {
+                   "direction" : {
+                       "vec4" : [
+                           0.63329797983169556,
+                           -0.70710676908493042,
+                           0.31453719735145569,
+                           1
+                       ]
+                   },
+                   "yaw" : -26.411999999999999,
+                   "shadow_dist" : 200,
+                   "shadow_view_mat" : {
+                       "mat4" : [
+                           -0.44482277936107362,
+                           0.63329799362362249,
+                           -0.63329799165462697,
+                           0,
+                           0,
+                           0.70710678008730987,
+                           0.70710678228578527,
+                           0,
+                           0.89561861021390665,
+                           0.31453720420142856,
+                           -0.31453720322349665,
+                           0,
+                           18.168498168498171,
+                           -23.247863247863251,
+                           -113.15484253869406,
+                           1
+                       ]
+                   },
+                   "shadow_proj_mat" : {
+                       "mat4" : [
+                           0.01,
+                           0,
+                           0,
+                           0,
+                           0,
+                           0.01,
+                           0,
+                           0,
+                           0,
+                           0,
+                           -0.0050251256281407036,
+                           0,
+                           -0,
+                           -0,
+                           -0.0050251256281407036,
+                           1
+                       ]
+                   }
+               }
+           },
            "thumbnail" : {
                "vars" : {
                    "camera_view_matrix" : {
                        "mat4" : [
-                           0.76604444268444705,
-                           -0.27571419087158244,
-                           0.58065273338227197,
+                           0.76604443788528442,
+                           -0.27571418881416321,
+                           0.58065271377563477,
                            0,
                            -6.6613381477509392e-15,
-                           0.90333529172666238,
-                           0.42893513579690112,
+                           0.90333527326583862,
+                           0.42893514037132263,
                            0,
-                           -0.64278761020439346,
-                           -0.32858337704931861,
-                           0.69199498010794147,
+                           -0.6427876353263855,
+                           -0.32858338952064514,
+                           0.69199496507644653,
                            0,
-                           -9.0459402285908652,
-                           11.327244691707014,
-                           -76.902570871350633,
+                           -9.0459403991699219,
+                           11.327244758605957,
+                           -76.902572631835938,
                            1
                        ]
                    }
@@ -36,7 +110,8 @@
                    },
                    "model" : {
                        "vars" : {
-                           "path" : "$(workspace)/assets/assets_armagedon/models/test_map/test_map.blend"
+                           "path" : "$(workspace)/assets/assets_armagedon/models/test_map/test_map.blend",
+                           "filter" : ";-terrain_mod"
                        }
                    },
                    "rigid_body" : {
@@ -47,17 +122,65 @@
                    }
                },
                "children" : {
-                   "collision_shape" : {
+                   "terrain_mod" : {
                        "roles" : {
                            "pose" : {
 
                            },
-                           "collider" : {
-
+                           "model" : {
+                               "vars" : {
+                                   "path" : "$(workspace)/assets/assets_armagedon/models/test_map/test_map.blend",
+                                   "filter" : "-root;+terrain_mod;",
+                                   "force_sync_load" : true
+                               }
                            },
-                           "triangle_mesh_collider" : {
+                           "terrain_mod" : {
 
                            }
+                       }
+                   }
+               }
+           },
+           "terrain" : {
+               "roles" : {
+                   "pose" : {
+
+                   },
+                   "tree_fx" : {
+                       "vars" : {
+                           "trees_enabled" : false
+                       }
+                   },
+                   "ground_fx" : {
+                       "vars" : {
+                           "camera_pos" : {
+                               "vec4" : [
+                                   -34.831394195556648,
+                                   26.123643875122081,
+                                   -76.489715576171889,
+                                   0
+                               ]
+                           },
+                           "flatness" : 1,
+                           "mountain_density" : 0,
+                           "unresolved_count_src" : null,
+                           "level_count" : null,
+                           "decal_mask" : {
+                               "flags" : "00000000000000001111111111111111"
+                           },
+                           "grass_a" : "$(workspace)/assets/assets_armagedon/materials/terrain/dirt_a/__init__.emat",
+                           "grass_b" : "$(workspace)/assets/assets_armagedon/materials/terrain/dirt_b/__init__.emat",
+                           "dirt_a" : "$(workspace)/assets/assets_armagedon/materials/terrain/grass_a/__init__.emat",
+                           "dirt_b" : "$(workspace)/assets/assets_armagedon/materials/terrain/grass_b/__init__.emat",
+                           "rocks_a" : "$(workspace)/assets/assets_armagedon/materials/terrain/rocks_a/__init__.emat",
+                           "rocks_b" : "$(workspace)/assets/assets_armagedon/materials/terrain/rocks_b/__init__.emat",
+                           "snow_a" : "$(workspace)/assets/assets_armagedon/materials/terrain/snow_a/__init__.emat",
+                           "snow_b" : "$(workspace)/assets/assets_armagedon/materials/terrain/snow_b/__init__.emat",
+                           "grass_texture" : "$(workspace)/assets/assets_armagedon/materials/terrain/grass.png",
+                           "detail_tex_size" : 8,
+                           "vertical_offset" : -100,
+                           "vertical_scale" : 200,
+                           "square_size" : 200
                        }
                    }
                }
